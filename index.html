@@ -21,210 +21,490 @@
         background: linear-gradient(135deg, #398fd6 5%, #7db9e8 76%);
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#398fd6', endColorstr='#7db9e8', GradientType=1);
+
         /* IE6-9 fallback on horizontal gradient */
     }
-    
+
+    /*.toolTip{
+    position: absolute;
+    border: #7db9e8;
+    background: #fff;
+}*/
+
+    .toolTip {
+        position: absolute;
+        text-align: center;
+        width: 60px;
+        height: 50px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: steelblue;
+        color: white;
+        border: 0px;
+        border-radius: 3px;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+    }
+
     .subunit-boundary {
         fill: none;
         stroke: #227700;
         stroke-dasharray: 5, 0;
         stroke-linejoin: round;
     }
+
+    svg {
+        display: block;
+        margin: auto;
+    }
 </style>
 
 <body>
     <script type="text/javascript">
-    var data = [
-  {
-    "region": "新北市",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "台北市",
-    "number": 680,
-    "pepople_number": 2608522,
-    "avege_number": 3836,
-    "sales":14472051
-  
-  },
-  {
-    "region": "桃園市",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "台中市",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "台南市",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "高雄市",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "宜蘭縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "新竹縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "苗栗縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "彰化縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "南投縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "雲林縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-  {
-    "region": "嘉義縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
-{
-    "region": "屏東縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
+        var data96 = [{
+                "region": "新北市",
+                "number": 386,
+                "pepople_number": 3767644,
+                "avege_number": 9761,
+                "sales": 2894712
 
-{
-    "region": "花蓮縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
+            },
+            {
+                "region": "臺北市",
+                "number": 680,
+                "pepople_number": 2608522,
+                "avege_number": 3836,
+                "sales": 14472051
 
-{
-    "region": "好縣",
-    "number": 386,
-    "pepople_number": 3767644,
-    "avege_number": 9761,
-    "sales":2894712
-  
-  },
+            },
+            {
+                "region": "桃園市",
+                "number": 219,
+                "pepople_number": 1916420,
+                "avege_number": 8751,
+                "sales": 1539439
 
+            },
+            {
+                "region": "台中市",
+                "number": 436,
+                "pepople_number": 2583736,
+                "avege_number": 5926,
+                "sales": 2581715
 
-  
-];
+            },
+            {
+                "region": "台南市",
+                "number": 251,
+                "pepople_number": 1855648,
+                "avege_number": 7393,
+                "sales": 4723968
 
-var density = {
-    "臺北市": 9952.60,
-    "嘉義市": 4512.66,
-    "新竹市": 4151.27,
-    "基隆市": 2809.27,
-    "新北市": 1932.91,
-    "桃園市": 1692.09,
-    "臺中市": 1229.62,
-    "彰化縣": 1201.65,
-    "高雄市": 942.97,
-    "臺南市": 860.02,
-    "金門縣": 847.16,
-    "澎湖縣": 802.83,
-    "雲林縣": 545.57,
-    "連江縣": 435.21,
-    "新竹縣": 376.86,
-    "苗栗縣": 311.49,
-    "屏東縣": 305.03,
-    "嘉義縣": 275.18,
-    "宜蘭縣": 213.89,
-    "南投縣": 125.10,
-    "花蓮縣": 71.96,
-    "臺東縣": 63.75
-  };
+            },
+            {
+                "region": "高雄市",
+                "number": 314,
+                "pepople_number": 2743372,
+                "avege_number": 8737,
+                "sales": 1885188
 
-</script>
+            },
+            {
+                "region": "宜蘭縣",
+                "number": 55,
+                "pepople_number": 456836,
+                "avege_number": 8306,
+                "sales": 242589
+
+            },
+            {
+                "region": "新竹縣",
+                "number": 67,
+                "pepople_number": 489986,
+                "avege_number": 7313,
+                "sales": 186569
+
+            },
+            {
+                "region": "苗栗縣",
+                "number": 65,
+                "pepople_number": 555198,
+                "avege_number": 8542,
+                "sales": 264049
+
+            },
+            {
+                "region": "彰化縣",
+                "number": 120,
+                "pepople_number": 1302683,
+                "avege_number": 10856,
+                "sales": 712780
+
+            },
+            {
+                "region": "南投縣",
+                "number": 68,
+                "pepople_number": 529436,
+                "avege_number": 7786,
+                "sales": 263710
+
+            },
+            {
+                "region": "雲林縣",
+                "number": 55,
+                "pepople_number": 719615,
+                "avege_number": 13084,
+                "sales": 237724
+
+            },
+            {
+                "region": "嘉義縣",
+                "number": 50,
+                "pepople_number": 275766,
+                "avege_number": 5515,
+                "sales": 134398
+
+            },
+            {
+                "region": "屏東縣",
+                "number": 77,
+                "pepople_number": 882849,
+                "avege_number": 11466,
+                "sales": 263145
+
+            },
+            {
+                "region": "連江縣",
+                "number": 0,
+                "pepople_number": 9843,
+                "avege_number": 0,
+                "sales": 0
+            },
+            {
+                "region": "花蓮縣",
+                "number": 67,
+                "pepople_number": 340633,
+                "avege_number": 5084,
+                "sales": 213269
+
+            },
+            {
+                "region": "澎湖縣",
+                "number": 14,
+                "pepople_number": 91652,
+                "avege_number": 6547,
+                "sales": 21745
+            },
+            {
+                "region": "基隆市",
+                "number": 29,
+                "pepople_number": 387656,
+                "avege_number": 13367,
+                "sales": 112093
+            },
+            {
+                "region": "新竹市",
+                "number": 88,
+                "pepople_number": 394349,
+                "avege_number": 4481,
+                "sales": 804892
+            },
+            {
+                "region": "嘉義市",
+                "number": 69,
+                "pepople_number": 271074,
+                "avege_number": 3929,
+                "sales": 400082
+            },
+            {
+                "region": "金門縣",
+                "number": 13,
+                "pepople_number": 80654,
+                "avege_number": 6204,
+                "sales": 8503
+            }
+        ];
+
+        var density97 = {
+            "A": 4, // 台北市
+            "I": 1, //嘉義市
+            "O": 0, //新竹市
+            "C": 14, //基隆市
+            "F": 4, //新北市
+            "H": 2, //桃園市
+            "B": 0, //台中市
+            "N": -4, //彰化縣
+            "E": 2, //高雄市
+            "D": 4, //台南市
+            "W": 15, //金門縣
+            "X": -14, //澎湖縣
+            "P": -4, //雲林縣
+            "Z": 0, //連江縣
+            "J": 6, //新竹縣
+            "K": -9, //苗栗縣
+            "T": -10, //屏東縣
+            "Q": 10, //嘉義縣
+            "G": 0, //宜蘭縣
+            "M": 0, //南投縣
+            "U": -4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density98 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density99 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density100 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density101 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density102 = {
+            "A": 15, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density103 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density104 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density105 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+        var density106 = {
+            "A": 7, // 台北市
+            "I": 6, //嘉義市
+            "O": 10, //新竹市
+            "C": 10, //基隆市
+            "F": 5, //新北市
+            "H": 1, //桃園市
+            "B": 0, //台中市
+            "N": 0, //彰化縣
+            "E": 2, //高雄市
+            "D": 3, //台南市
+            "W": -8, //金門縣
+            "X": 0, //澎湖縣
+            "P": -9, //雲林縣
+            "Z": 0, //連江縣
+            "J": 10, //新竹縣
+            "K": -2, //苗栗縣
+            "T": -8, //屏東縣
+            "Q": 8, //嘉義縣
+            "G": -2, //宜蘭縣
+            "M": 6, //南投縣
+            "U": 4, //花蓮縣
+            "V": 4 //台東縣
+        };
+    </script>
 
 
 </body>
 <script>
-    jQuery(function() {
+    jQuery(function () {
         var width = 800,
             height = 600;
-
-        var svg = d3.select("body").append("svg")
+        var svg = d3.select("body")
+            .append("svg")
             // .attr("class", "svgback")
             .attr("width", width)
             .attr("height", height);
 
+        /*var divs = $("div.tooltips");
+        if (divs.length === 0) {
+            var div = d3.select("#canvas-svg")
+                .append("div")
+                .attr("class", "tooltips")
+                .style("opacity", 0);
+        } else {
+            var div = d3.select("div.tooltips");
+        }*/
         var projection = d3.geo.mercator()
-            .center([121, 24])
+            .center([122.5, 24])
             .scale(6000);
 
         var path = d3.geo.path()
             .projection(projection);
 
-        d3.json("taiwan.json", function(error, topology) {
-            console.log(topology);
-            var g = svg.append("g");
+        var tooltip = d3.select("body").append("div").attr("class", "toolTip");
 
+        d3.json("taiwan.json", function (error, topology) {
+            var g = svg.append("g");
             // 縣市/行政區界線
             d3.select("svg").append("path").datum(
                 topojson.mesh(topology,
                     topology.objects["County_MOI_1060525"],
-                    function(a,
+                    function (a,
                         b) {
                         return a !== b;
                     })).attr("d", path).attr("class", "subunit-boundary");
@@ -233,30 +513,148 @@ var density = {
                 .data(topojson.feature(topology, topology.objects.County_MOI_1060525).features)
                 .enter()
                 .append("path")
+                .attr("class", "state-path")
                 .attr("d", path)
+                //.transition()
+                //.duration(2000)
                 .attr({
                     d: path,
-                    name: function(d) {
+                    name: function (d) {
                         return d.properties["COUNTYNAME"];
-
-
-
                     },
-                    fill: '#fff',
-                    stroke: "#227700"
-
-
-
-
-
-                }).attr('stroke-width', "2")
-                .on("mouseover", function(d) {
-                    d3.select(this).attr("fill", "#227700");
-                    document.alert(6);
-
-                }).on("mouseleave", function(d) {
-                    d3.select(this).attr("fill", "#fff");
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ]);
+                        return color(density97[d.properties.COUNTYID]);
+                    },
+                    stroke: "black"
+                }).attr('stroke-width', "1")
+                .on("mouseover", function (d) {
+                    //d3.select(this).attr("fill", "#227700");
+                    var centroid = path.centroid(d);
+                    var x = centroid[0];
+                    var y = centroid[1];
+                    tooltip.transition().duration(10).style("opacity", 1);
+                    tooltip.html(d.properties.COUNTYNAME+"<br>"+"andy"
+                    +"<br>"+"aaaa")
+                        .style("left", x + "px")
+                        .style("top", y + "px");
+                }).on("mouseleave", function (d) {
+                    //d3.select(this).attr("fill", "#fff");
+                    //d3.selectAll("rect","bar")
+                    // .remove();
+                    tooltip.transition().duration(500).style("opacity", 0);
                 });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density98[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density99[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density100[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density101[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density102[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density103[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density104[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density105[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear().domain([-15, 15]).range(["#FFFFFF",
+                            "#1F800D"
+                        ])
+                        return color(density106[d.properties.COUNTYID]);
+                    }
+                });
+
         });
     })
 </script>
