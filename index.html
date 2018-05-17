@@ -533,7 +533,7 @@
                 .on("mouseover", function (d) {
                     //d3.select(this).attr("fill", "#227700");
                     var centroid = path.centroid(d);
-                    var x = centroid[0];
+                    var x = centroid[0]+300;
                     var y = centroid[1];
                     tooltip.transition().duration(10).style("opacity", 1);
                     tooltip.html(d.properties.COUNTYNAME+"<br>"+"andy"
