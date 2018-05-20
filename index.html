@@ -528,8 +528,8 @@
                     tooltip.transition().duration(10).style("opacity", 1);
                     tooltip.html(d.properties.COUNTYNAME + "<br>" + "andy" +
                             "<br>" + "aaaa")
-                        .style("left", x + "px")
-                        .style("top", y + "px");
+                        .style("left", d3.event.pageX + "px")
+                        .style("top", d3.event.pageY + "px");
                 }).on("mouseleave", function (d) {
                     //d3.select(this).attr("fill", "#fff");
                     //d3.selectAll("rect","bar")
