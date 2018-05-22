@@ -737,7 +737,7 @@
         var path = d3.geo.path()
             .projection(projection);
 
-        var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+        var tooltip = d3.select("#toolTip");
         //畫出起始圖
         d3.json("taiwan.json", function (error, topology) {
                 var g = svg.append("g");
