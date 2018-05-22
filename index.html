@@ -514,7 +514,7 @@
 </body>
 <script>
        function change() {
-            a = document.getElementsByClassName('slider').value;
+            a = document.getElementById('slider').value;
             console.log(a);
         }
     jQuery(function () {
@@ -706,7 +706,7 @@
             d3.select("body").append("div").attr("class", "slider1")
                 .append("input")
                 .attr("type", "range")
-                .attr("class", "slider")
+                .attr("id", "slider")
                 .attr("min", "97")
                 .attr("max", "106")
                 .attr("step", "null")
