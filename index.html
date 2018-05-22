@@ -49,6 +49,10 @@
         opacity: 0;
 
     }
+    .slider1{
+        top : 40;
+        width: 100%;
+    }
 
     .subunit-boundary {
         fill: none;
@@ -689,11 +693,15 @@
                 });
 
             //產生滑軸
-
-
+            d3.select("body").append("div").attr("class","slider1")
+                .append("input")
+                .attr("id","slider")
+                .attr("min","97")
+                .attr("max","106")
+                .attr("step","null")
+                .attr("mark","{number:97,98,99,100,101,102,103,104,105,106}");
         });
     })
 </script>
-<input id="range" type="range" min="0" max="5" value="0" step = "null" marks ={number:97,98,99,100} />
 
 </html>
