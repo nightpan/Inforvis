@@ -60,9 +60,6 @@
         width: 800px;
         margin: auto;
     }
-    #slidermark{
-        width:800px;
-    }
     .subunit-boundary {
         fill: none;
         stroke: #227700;
@@ -725,12 +722,12 @@
                .attr("id","slidermark")
                .attr({
                     left : function(){
-                       return length + "%";
+                       return length + "px";
                    }
                })
                .html(count);
 
-               length = length+10;
+               length = length+80;
                }
 
         });
