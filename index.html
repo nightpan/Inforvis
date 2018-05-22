@@ -712,10 +712,14 @@
                 .attr("step", "null")
                 .attr("mark", "{number:97,98,99,100,101,102,103,104,105,106}")
                 .attr("oninput", "change()");
+            var count = 97
+            for(count = 97 ;count<107;count++)
+            {
             d3.select("body").append("div").attr("class","slidermark")
                .append("span")
-               .html("100"); 
-
+               .attr("left","(count-97)%")
+               .html(count);
+               }
 
         });
     })
