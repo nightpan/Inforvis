@@ -53,6 +53,9 @@
         top : 40;
         width: 100%;
     }
+    .slider{
+        width:100%;
+    }
 
     .subunit-boundary {
         fill: none;
@@ -696,11 +699,10 @@
             d3.select("body").append("div").attr("class","slider1")
                 .append("input")
                 .attr("type","range")
-                .attr("id","slider")
+                .attr("class","slider")
                 .attr("min","97")
                 .attr("max","106")
                 .attr("step","null")
-                .attr("width","100%")
                 .attr("mark","{number:97,98,99,100,101,102,103,104,105,106}");
         });
     })
