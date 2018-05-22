@@ -49,21 +49,25 @@
         opacity: 0;
 
     }
+
     .slider1 {
         width: 550px;
         margin-left: 150px;
     }
-    #slider{
-        width : 100%;
+
+    #slider {
+        width: 100%;
     }
+
     .subunit-boundary {
         fill: none;
         stroke: #227700;
         stroke-dasharray: 5, 0;
         stroke-linejoin: round;
     }
-    span{
-        margin-right:36px;
+
+    span {
+        margin-right: 36px;
     }
 
     svg {
@@ -512,10 +516,23 @@
 
 </body>
 <script>
-       function change() {
-            a = document.getElementById('slider').value;
-            console.log(a);
+    function change() {
+        var year = document.getElementById('slider').value;
+        if (year == 98) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density98[d.properties.COUNTYID]);
+                    }
+                });
         }
+    }
     jQuery(function () {
         var width = 800,
             height = 600;
@@ -712,18 +729,14 @@
                 .attr("mark", "{number:97,98,99,100,101,102,103,104,105,106}")
                 .attr("oninput", "change()");
             var count = 97
-            for(count = 97 ;count<107;count++)
-            {   d3.select(".slider1")
+            for (count = 97; count < 107; count++) {
+                d3.select(".slider1")
                     .append("span")
                     .html(count);
-
-      
-               }
+            }
 
         });
     })
-
-
 </script>
 
 </html>
