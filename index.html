@@ -689,7 +689,8 @@
                 });
 
             //產生滑軸
-            d3.select("body").append("div")
+            d3.select("body").select("svg")
+                .append("div")
                 .attr("class","slideraaa")
                 .append("input")
                 .attr("type","range")
