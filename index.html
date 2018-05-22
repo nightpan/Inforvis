@@ -689,15 +689,14 @@
                 });
 
             //產生滑軸
-            d3.select("body")
-                .append("div")
-                .attr("class","slideraaa")
+            svg.append("div")
+                .attr("class", "slideraaa")
                 .append("input")
-                .attr("type","range")
-                .attr("min","1")
-                .attr("max","100")
-                .attr("class","slider")
-                .attr("width","100%");         
+                .attr("type", "range")
+                .attr("min", "1")
+                .attr("max", "100")
+                .attr("class", "slider")
+                .attr("width", "100");
         });
     })
 </script>
