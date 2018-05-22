@@ -689,13 +689,14 @@
                 });
 
             //產生滑軸
-            $("#ex4").slider({  
-        ticks: [0, 100, 200, 300, 400,500,600,700,800],  
-        ticks_labels: ['1', '2', '3', '4', '5','6', '7', '8', '9'],  
-        ticks_snap_bounds: 100  
-    }); 
+
         });
     })
 </script>
+<div class="container">  
+    <h2>Custom tick marks.</h2>  
+    <input id="ex4" type="text" data-slider-ticks="[0, 100, 200, 300, 400,500,600,700]" data-slider-ticks-snap-bounds="30"  
+           data-slider-ticks-labels='["1", "2", "3", "4", "5","6","7","8","9"]'/>  
+</div>  
 
 </html>
