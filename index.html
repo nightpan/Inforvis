@@ -715,8 +715,9 @@
             var count = 97
             for(count = 97 ;count<107;count++)
             {
-            d3.select("body").append("div").attr("class","slidermark")
+            d3.select(".slider1")
                .append("span")
+               .attr("id","slidermark")
                .attr("left","(count-97)%")
                .html(count);
                }
