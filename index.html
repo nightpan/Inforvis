@@ -46,7 +46,7 @@
         pointer-events: none;
         top: 0;
         left: 0;
-        opacity: 1;
+        opacity: 0;
 
     }
 
@@ -553,11 +553,7 @@
                 }).attr('stroke-width', "1")
                 .on("mouseover", function (d) {
                     //d3.select(this).attr("fill", "#227700");
-                    var centroid = path.centroid(d);
-                    var x = centroid[0] + 300;
-                    var y = centroid[1];
                     tooltip.transition().duration(10).style("opacity", 1);
-                    //console.log(data96);
                     let i;
 
                     for (i = 0; i < data96.length; i++) {
@@ -576,8 +572,6 @@
 
                 }).on("mouseleave", function (d) {
                     //d3.select(this).attr("fill", "#fff");
-                    //d3.selectAll("rect","bar")
-                    // .remove();
                     tooltip.transition().duration(500).style("opacity", 0);
                 });
             //帶入不同年代的資料
