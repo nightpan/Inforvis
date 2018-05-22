@@ -724,69 +724,19 @@
 
     function change() {
         var year = document.getElementById('slider').value;
-        var width = 800,
-            height = 600;
-        var svg = d3.select("svg");
-        var projection = d3.geo.mercator()
-            .center([122.5, 24])
-            .scale(6000);
-
-        var path = d3.geo.path()
-            .projection(projection);
-
-        var tooltip = d3.select("#toolTip");
-        //畫出起始圖
-        d3.json("taiwan.json", function (error, topology) {
-                var g = svg.append("g");
-                // 縣市/行政區界線
-                d3.select("svg").append("path").datum(
-                    topojson.mesh(topology,
-                        topology.objects["County_MOI_1060525"],
-                        function (a,
-                            b) {
-                            return a !== b;
-                        })).attr("d", path).attr("class", "subunit-boundary");
-
-                d3.select("g").selectAll("path")
-                    .data(topojson.feature(topology, topology.objects.County_MOI_1060525).features)
-                    .enter()
-                    .append("path")
-                    .attr("class", "state-path")
-                    .attr("d", path)
-                    .attr({
-                        d: path,
-                        name: function (d) {
-                            return d.properties["COUNTYNAME"];
-                        },
-                        fill: function (d) {
-                            var color = d3.scale.linear()
-                                .domain([-50, 0, 15])
-                                .range(["red", "white", "green"]);
-                            return color(density98[d.properties.COUNTYID]);
-                        },
-                        stroke: "black"
-                    })
-                    .attr('stroke-width', "1")
-                    .on("mouseover", function (d) {
-                        //d3.select(this).attr("fill", "#227700");
-                        tooltip.transition().duration(10).style("opacity", 1);
-                        let i;
-
-                        for (i = 0; i < data96.length; i++) {
-                            if (d.properties.COUNTYID == data96[i].COUNTYID) {
-                                tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[i].number +
-                                        "<br> 縣市人口數：" + data96[i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                        data96[i].avege_number + "<br> 銷售總額：" + data96[i].sales)
-                                    .style("left", d3.event.pageX + "px")
-                                    .style("top", d3.event.pageY + "px");
-                            }
-                        }
-                    })
-                    .on("mouseleave", function (d) {
-                        //d3.select(this).attr("fill", "#fff");
-                        tooltip.transition().duration(500).style("opacity", 0);
-                    });
-            })
+        d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density98[d.properties.COUNTYID]);
+                    }
+                });
+        
         };
 </script>
 
