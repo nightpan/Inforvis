@@ -516,23 +516,6 @@
 
 </body>
 <script>
-    function change() {
-        var year = document.getElementById('slider').value;
-        if (year == 98) {
-            d3.select("g").selectAll("path")
-                .transition()
-                .duration(2000)
-                .attr({
-                    d: path,
-                    fill: function (d) {
-                        var color = d3.scale.linear()
-                            .domain([-50, 0, 15])
-                            .range(["red", "white", "green"]);
-                        return color(density98[d.properties.COUNTYID]);
-                    }
-                });
-        }
-    }
     jQuery(function () {
         var width = 800,
             height = 600;
@@ -733,6 +716,11 @@
                 d3.select(".slider1")
                     .append("span")
                     .html(count);
+            }
+
+            function change() {
+                var year = document.getElementById('slider').value;
+
             }
 
         });
