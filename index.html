@@ -729,7 +729,21 @@
             .scale(6000);
         var path = d3.geo.path()
             .projection(projection);
-        d3.select("g").selectAll("path")
+        if (year == 97) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density97[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 98) {
+            d3.select("g").selectAll("path")
                 .transition()
                 .duration(2000)
                 .attr({
@@ -741,8 +755,113 @@
                         return color(density98[d.properties.COUNTYID]);
                     }
                 });
-        
-        };
+        } else if (year == 99) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density99[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 100) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density100[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 101) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density101[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 102) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density102[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 103) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density103[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 104) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density104[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 105) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density105[d.properties.COUNTYID]);
+                    }
+                });
+        } else if (year == 106) {
+            d3.select("g").selectAll("path")
+                .transition()
+                .duration(2000)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["red", "white", "green"]);
+                        return color(density106[d.properties.COUNTYID]);
+                    }
+                });
+        }
+
+    };
 </script>
 
 </html>
