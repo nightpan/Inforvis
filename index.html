@@ -710,7 +710,12 @@
                 .attr("oninput", "change()");
             var count = 97
             for(count = 97 ;count<107;count++)
-            {
+            {   d3.select(".slider1")
+                    .append("span")
+                    .style({
+                        margin:'10%'
+                    })
+                    .html(count);
 
       
                }
@@ -720,5 +725,5 @@
 
 
 </script>
-<mat-slider formControlName="surveyScore" min="0" max="100" step="5" thumbLabel [tickInterval]="2"></mat-slider>
+
 </html>
