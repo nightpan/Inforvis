@@ -62,6 +62,9 @@
         stroke-dasharray: 5, 0;
         stroke-linejoin: round;
     }
+    span{
+        margin-right:10%;
+    }
 
     svg {
         display: block;
@@ -712,9 +715,6 @@
             for(count = 97 ;count<107;count++)
             {   d3.select(".slider1")
                     .append("span")
-                    .style({
-                        margin:'10px'
-                    })
                     .html(count);
 
       
