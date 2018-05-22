@@ -536,8 +536,6 @@
                 .append("path")
                 .attr("class", "state-path")
                 .attr("d", path)
-                //.transition()
-                //.duration(2000)
                 .attr({
                     d: path,
                     name: function (d) {
@@ -568,8 +566,6 @@
 
 
                     }
-
-
                 }).on("mouseleave", function (d) {
                     //d3.select(this).attr("fill", "#fff");
                     tooltip.transition().duration(500).style("opacity", 0);
@@ -577,7 +573,7 @@
             //帶入不同年代的資料
             d3.select("g").selectAll("path")
                 .transition()
-                .duration(4000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -589,8 +585,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(4000)
-                .duration(4000)
+                .delay(2000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -602,8 +598,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(8000)
-                .duration(4000)
+                .delay(4000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -615,8 +611,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(12000)
-                .duration(4000)
+                .delay(6000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -628,8 +624,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(16000)
-                .duration(4000)
+                .delay(8000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -641,8 +637,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(20000)
-                .duration(4000)
+                .delay(10000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -654,8 +650,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(24000)
-                .duration(4000)
+                .delay(12000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -667,8 +663,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(28000)
-                .duration(4000)
+                .delay(14000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -680,8 +676,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(32000)
-                .duration(4000)
+                .delay(16000)
+                .duration(2000)
                 .attr({
                     d: path,
                     fill: function (d) {
