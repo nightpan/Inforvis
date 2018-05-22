@@ -716,11 +716,7 @@
             d3.select(".slider1")
                .append("span")
                .attr("id","slidermark")
-               .attr({
-                    left : function(){
-                       return length + "px";
-                   }
-               })
+               .attr("margin","10%")
                .html(count);
 
                length = length+80;
