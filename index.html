@@ -513,10 +513,6 @@
 </body>
 <script>
     jQuery(function () {
-        function change(){
-            var year = document.getElementById('slider').value;
-            console.log(year);
-        };
         var width = 800,
             height = 600;
         var svg = d3.select("body")
@@ -721,6 +717,10 @@
         });
 
     })
+    function change(){
+            var year = document.getElementById('slider').value;
+            console.log(year);
+        };
 
 
 </script>
