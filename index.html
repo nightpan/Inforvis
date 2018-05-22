@@ -724,6 +724,8 @@
 
     function change() {
         var year = document.getElementById('slider').value;
+        var path = d3.geo.path()
+            .projection(projection);
         d3.select("g").selectAll("path")
                 .transition()
                 .duration(2000)
