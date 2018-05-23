@@ -2675,7 +2675,7 @@
                     }
                 });
             //產生滑軸
-            d3.select("body").append("div").attr("class", "slider1")
+            d3.select("body").append("svg").attr("class", "slider1")
                 .append("input")
                 .attr("type", "range")
                 .attr("id", "slider")
@@ -2689,7 +2689,7 @@
                 .domain([97,106])
                 .range([0,550])
             for (count = 97; count < 107; count++) {
-                d3.select("body")
+                d3.select(".slider1")
                     .append("text")
                     .attr("x",function(d){
                         return x(count);
