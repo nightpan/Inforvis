@@ -741,6 +741,27 @@
                             .range(["red", "white", "green"]);
                         return color(density97[d.properties.COUNTYID]);
                     }
+                })
+                .on("mouseover", function (d) {
+                    //d3.select(this).attr("fill", "#227700");
+                    tooltip.transition().duration(10).style("opacity", 1);
+                    let i;
+
+                    for (i = 0; i < data96.length; i++) {
+                        if (d.properties.COUNTYID == data96[i].COUNTYID) {
+
+                            tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[i].number +
+                                    "<br> 縣市人口數：" + data96[i].pepople_number + "<br>平均多少人享有一間書店： " +
+                                    data96[i].avege_number + "<br> 銷售總額：" + data96[i].sales)
+                                .style("left", d3.event.pageX + "px")
+                                .style("top", d3.event.pageY + "px");
+                        }
+
+
+                    }
+                }).on("mouseleave", function (d) {
+                    //d3.select(this).attr("fill", "#fff");
+                    tooltip.transition().duration(500).style("opacity", 0);
                 });
         } else if (year == 98) {
             d3.select("g").selectAll("path")
