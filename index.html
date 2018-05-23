@@ -2695,7 +2695,7 @@
                 .domain([97, 106])
                 .range([0, 550])
             d3.select("body").append("svg").attr("class", "tick").attr("width", 600).attr("height",25);
-            for (count = 97; count < 107; count++) {
+            for (count = 97; count < 106; count++) {
                 d3.select(".tick")
                     .append("text")
                     .attr("x", function (d) {
@@ -2705,6 +2705,15 @@
                     .attr("text-anchor", "middle")
                     .html(count);
             }
+            d3.select(".tick")
+                    .append("text")
+                    .attr("x", function (d) {
+                        return x(106)+8;
+                    })
+                    .attr("y","25")
+                    .attr("text-anchor", "middle")
+                    .html(count+"年");
+
         });
     })
 
