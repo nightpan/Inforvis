@@ -67,6 +67,9 @@
         stroke-dasharray: 5, 0;
         stroke-linejoin: round;
     }
+    text{
+        font-family: 'Noto Sans TC', sans-serif;
+    }
 
     span {
         margin-right: 36px;
@@ -2468,6 +2471,7 @@
         var title = "近十年台灣實體書店業發展趨勢"
         //標題
         svg.append("text")
+            .attr("x", width / 2)
             .attr("y", (height - 100) / 10)
             .attr("text-anchor", "middle")
             .style("font-size", "30px")
