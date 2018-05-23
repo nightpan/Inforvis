@@ -2467,7 +2467,7 @@
             .attr("height", height);
         var projection = d3.geo.mercator()
             .center([122.5, 24])
-            .scale(5000);
+            .scale(6000);
 
         var path = d3.geo.path()
             .projection(projection);
@@ -2694,7 +2694,7 @@
             x = d3.scale.linear()
                 .domain([97, 106])
                 .range([0, 550])
-            d3.select("body").append("svg").attr("class", "tick").attr("width", 600);
+            d3.select("body").append("svg").attr("class", "tick").attr("width", 600).attr("height",25);
             for (count = 97; count < 107; count++) {
                 d3.select(".tick")
                     .append("text")
