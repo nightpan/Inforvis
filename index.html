@@ -2476,9 +2476,6 @@
             .attr("text-anchor", "middle")
             .style("font-size", "30px")
             .text(title);
-
-
-
         //畫出起始圖
         d3.json("taiwan.json", function (error, topology) {
             var g = svg.append("g");
@@ -2688,9 +2685,15 @@
                 .attr("mark", "{number:97,98,99,100,101,102,103,104,105,106}")
                 .attr("oninput", "change()");
             var count = 97
+            x = d3.scale.linear()
+                .domain([97,106])
+                .range([0,550])
             for (count = 97; count < 107; count++) {
                 d3.select(".slider1")
-                    .append("span")
+                    .append("text")
+                    .attr("x",function(d){
+                        return x(count);
+                    })
                     .html(count);
             }
         });
