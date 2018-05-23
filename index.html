@@ -746,6 +746,7 @@
                 });
                 d3.select("g").selectAll("path")
                 .on("mouseover", function (d) {
+                    console.log(2222);
                     //d3.select(this).attr("fill", "#227700");
                     tooltip.transition().duration(10).style("opacity", 1);
                     let i;
