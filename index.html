@@ -2488,10 +2488,11 @@
                         return d.properties["COUNTYNAME"];
                     },
                     fill: function (d) {
-                        var color = d3.scale.linear()
+                        /*var color = d3.scale.linear()
                             .domain([-50, 0, 15])
                             .range(["#C12B3C", "white", "green"]);
-                        return color(density97[d.properties.COUNTYID]);
+                        return color(density97[d.properties.COUNTYID]);*/
+                        return "#FFFFFF";
                     },
                     stroke: "black"
                 }).attr('stroke-width', "1")
@@ -2533,7 +2534,20 @@
             //帶入不同年代的資料
             d3.select("g").selectAll("path")
                 .transition()
-                .duration(2000)
+                .duration(500)
+                .attr({
+                    d: path,
+                    fill: function (d) {
+                        var color = d3.scale.linear()
+                            .domain([-50, 0, 15])
+                            .range(["#C12B3C", "white", "green"]);
+                        return color(density97[d.properties.COUNTYID]);
+                    }
+                });
+            d3.select("g").selectAll("path")
+                .transition()
+                .delay(500)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2545,8 +2559,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(2000)
-                .duration(2000)
+                .delay(1000)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2558,8 +2572,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(4000)
-                .duration(2000)
+                .delay(1500)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2571,8 +2585,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(6000)
-                .duration(2000)
+                .delay(2000)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2584,8 +2598,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(8000)
-                .duration(2000)
+                .delay(2500)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2597,8 +2611,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(10000)
-                .duration(2000)
+                .delay(3000)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2610,8 +2624,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(12000)
-                .duration(2000)
+                .delay(3500)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2623,8 +2637,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(14000)
-                .duration(2000)
+                .delay(4000)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
@@ -2636,8 +2650,8 @@
                 });
             d3.select("g").selectAll("path")
                 .transition()
-                .delay(16000)
-                .duration(2000)
+                .delay(4500)
+                .duration(500)
                 .attr({
                     d: path,
                     fill: function (d) {
