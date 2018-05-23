@@ -67,7 +67,8 @@
         stroke-dasharray: 5, 0;
         stroke-linejoin: round;
     }
-    text{
+
+    text {
         font-family: 'Noto Sans TC', sans-serif;
     }
 
@@ -2535,7 +2536,8 @@
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number +
                                     "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales +
+                                    "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2675,7 +2677,7 @@
                     }
                 });
             //產生滑軸
-            d3.select("body").append("svg").attr("class", "slider1")
+            d3.select("body").append("div").attr("class", "slider1")
                 .append("input")
                 .attr("type", "range")
                 .attr("id", "slider")
@@ -2686,12 +2688,13 @@
                 .attr("oninput", "change()");
             var count = 97
             x = d3.scale.linear()
-                .domain([97,106])
-                .range([0,550])
+                .domain([97, 106])
+                .range([0, 550])
+            d3.select("body").append("svg").attr("class", "tick").attr("width",550);
             for (count = 97; count < 107; count++) {
-                d3.select(".slider1")
+                d3.select(".tick")
                     .append("text")
-                    .attr("x",function(d){
+                    .attr("x", function (d) {
                         return x(count);
                     })
                     .attr("text-anchor", "middle")
@@ -2732,7 +2735,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2764,7 +2767,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2796,7 +2799,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2830,7 +2833,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2862,7 +2865,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2894,7 +2897,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2926,7 +2929,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2958,7 +2961,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -2990,7 +2993,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
@@ -3022,7 +3025,7 @@
                         if (d.properties.COUNTYID == data96[k][i].COUNTYID) {
                             tooltip.html(d.properties.COUNTYNAME + "<br> 書店數目： " + data96[k][i].number +
                                     "<br> 縣市人口數：" + data96[k][i].pepople_number + "<br>平均多少人享有一間書店： " +
-                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales+"仟元")
+                                    data96[k][i].avege_number + "<br> 銷售總額：" + data96[k][i].sales + "仟元")
                                 .style("left", d3.event.pageX + "px")
                                 .style("top", d3.event.pageY + "px");
                         }
